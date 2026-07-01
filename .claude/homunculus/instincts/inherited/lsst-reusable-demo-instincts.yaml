@@ -1,0 +1,298 @@
+# Instincts generated from https://github.com/ejoliet/lsst-reusable-demo
+# Generated: 2026-07-01T01:52:15.389Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: lsst-reusable-demo-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/ejoliet/lsst-reusable-demo
+---
+
+# Lsst Reusable Demo Commit Length
+
+## Action
+
+Keep commit messages concise (~21 characters)
+
+## Evidence
+
+- Average commit message length: 21 chars
+- Based on 1 commits
+
+---
+id: lsst-reusable-demo-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/ejoliet/lsst-reusable-demo
+---
+
+# Lsst Reusable Demo Naming Files
+
+## Action
+
+Use snake_case naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: snake_case
+
+---
+id: lsst-reusable-demo-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/ejoliet/lsst-reusable-demo
+---
+
+# Lsst Reusable Demo Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: lsst-reusable-demo-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/ejoliet/lsst-reusable-demo
+---
+
+# Lsst Reusable Demo Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: lsst-reusable-demo-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/ejoliet/lsst-reusable-demo
+---
+
+# Lsst Reusable Demo Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: lsst-reusable-demo-test-naming
+trigger: "when creating a test file"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/ejoliet/lsst-reusable-demo
+---
+
+# Lsst Reusable Demo Test Naming
+
+## Action
+
+Name test files using the pattern: *.test.ts
+
+## Evidence
+
+- File pattern: *.test.ts
+- Consistent across test files
+
+---
+id: lsst-reusable-demo-instinct-file-naming
+trigger: "When creating a new Python file"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: ejoliet/lsst-reusable-demo
+---
+
+# Lsst Reusable Demo Instinct File Naming
+
+## Action
+
+Name the file using snake_case
+
+## Evidence
+
+- Pattern in namingConventions.files
+
+---
+id: lsst-reusable-demo-instinct-function-naming
+trigger: "When defining a new function"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: ejoliet/lsst-reusable-demo
+---
+
+# Lsst Reusable Demo Instinct Function Naming
+
+## Action
+
+Name the function using camelCase
+
+## Evidence
+
+- Pattern in namingConventions.functions
+
+---
+id: lsst-reusable-demo-instinct-class-naming
+trigger: "When defining a new class"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: ejoliet/lsst-reusable-demo
+---
+
+# Lsst Reusable Demo Instinct Class Naming
+
+## Action
+
+Name the class using PascalCase
+
+## Evidence
+
+- Pattern in namingConventions.classes
+
+---
+id: lsst-reusable-demo-instinct-constant-naming
+trigger: "When defining a constant"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: ejoliet/lsst-reusable-demo
+---
+
+# Lsst Reusable Demo Instinct Constant Naming
+
+## Action
+
+Name the constant using SCREAMING_SNAKE_CASE
+
+## Evidence
+
+- Pattern in namingConventions.constants
+
+---
+id: lsst-reusable-demo-instinct-import-style
+trigger: "When importing modules in Python"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: ejoliet/lsst-reusable-demo
+---
+
+# Lsst Reusable Demo Instinct Import Style
+
+## Action
+
+Use relative imports
+
+## Evidence
+
+- Pattern in importStyle
+
+---
+id: lsst-reusable-demo-instinct-export-style
+trigger: "When exporting functions or classes"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: ejoliet/lsst-reusable-demo
+---
+
+# Lsst Reusable Demo Instinct Export Style
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in exportStyle
+
+---
+id: lsst-reusable-demo-instinct-test-file-pattern
+trigger: "When creating a new test file"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: ejoliet/lsst-reusable-demo
+---
+
+# Lsst Reusable Demo Instinct Test File Pattern
+
+## Action
+
+Name the file with the pattern *.test.ts
+
+## Evidence
+
+- Pattern in testing.filePattern
+
+---
+id: lsst-reusable-demo-instinct-test-type
+trigger: "When writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: ejoliet/lsst-reusable-demo
+---
+
+# Lsst Reusable Demo Instinct Test Type
+
+## Action
+
+Write unit tests
+
+## Evidence
+
+- Pattern in testing.testTypes
+
+---
+id: lsst-reusable-demo-instinct-commit-format
+trigger: "When making a git commit"
+confidence: 0.8
+domain: git
+source: repo-analysis
+source_repo: ejoliet/lsst-reusable-demo
+---
+
+# Lsst Reusable Demo Instinct Commit Format
+
+## Action
+
+Write a short, freeform commit message without a prefix (average length ~21 characters)
+
+## Evidence
+
+- Pattern in commits.type
+- Example: 'Import existing files'
+
