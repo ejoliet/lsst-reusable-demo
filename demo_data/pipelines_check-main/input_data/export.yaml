@@ -1,0 +1,305 @@
+description: Butler Data Repository Export
+version: 1.0.0
+data:
+- type: dimension
+  element: instrument
+  records:
+  - name: HSC
+    visit_max: 21474800
+    exposure_max: 21474800
+    detector_max: 200
+    class_name: lsst.obs.subaru.HyperSuprimeCam
+- type: dimension
+  element: detector
+  records:
+  - instrument: HSC
+    id: 10
+    full_name: '1_36'
+    name_in_raft: '36'
+    raft: '1'
+    purpose: SCIENCE
+- type: dimension
+  element: physical_filter
+  records:
+  - instrument: HSC
+    name: HSC-R
+    band: r
+- type: collection
+  collection_type: CALIBRATION
+  name: HSC/calib
+- type: collection
+  collection_type: RUN
+  name: HSC/calib/curated/2013-01-31T00:00:00
+  host: null
+  timespan_begin: null
+  timespan_end: null
+- type: collection
+  collection_type: RUN
+  name: HSC/calib/gen2/2013-06-17
+  host: null
+  timespan_begin: null
+  timespan_end: null
+- type: collection
+  collection_type: RUN
+  name: HSC/calib/gen2/2013-11-03
+  host: null
+  timespan_begin: null
+  timespan_end: null
+- type: collection
+  collection_type: RUN
+  name: HSC/calib/unbounded
+  host: null
+  timespan_begin: null
+  timespan_end: null
+- type: collection
+  collection_type: RUN
+  name: refcats
+  host: null
+  timespan_begin: null
+  timespan_end: null
+- type: dataset_type
+  name: bfKernel
+  dimensions:
+  - instrument
+  storage_class: NumpyArray
+  is_calibration: true
+- type: dataset
+  dataset_type: bfKernel
+  run: HSC/calib/unbounded
+  records:
+  - dataset_id:
+    - 842
+    data_id:
+    - instrument: HSC
+    path: HSC/calib/unbounded/bfKernel/bfKernel_HSC_HSC_calib_unbounded.pickle
+    formatter: lsst.daf.butler.formatters.pickle.PickleFormatter
+- type: dataset_type
+  name: bias
+  dimensions:
+  - instrument
+  - detector
+  storage_class: ExposureF
+  is_calibration: true
+- type: dataset
+  dataset_type: bias
+  run: HSC/calib/gen2/2013-11-03
+  records:
+  - dataset_id:
+    - 1016
+    data_id:
+    - instrument: HSC
+      detector: 10
+    path: HSC/calib/gen2/2013-11-03/bias/bias_10_HSC_HSC_calib_gen2_2013-11-03.fits
+    formatter: lsst.obs.base.formatters.fitsExposure.FitsExposureFormatter
+- type: dataset_type
+  name: camera
+  dimensions:
+  - instrument
+  storage_class: Camera
+  is_calibration: true
+- type: dataset
+  dataset_type: camera
+  run: HSC/calib/unbounded
+  records:
+  - dataset_id:
+    - 1
+    data_id:
+    - instrument: HSC
+    path: HSC/calib/unbounded/camera/camera_HSC_HSC_calib_unbounded.fits
+    formatter: lsst.obs.base.formatters.fitsGeneric.FitsGenericFormatter
+- type: dataset_type
+  name: dark
+  dimensions:
+  - instrument
+  - detector
+  storage_class: ExposureF
+  is_calibration: true
+- type: dataset
+  dataset_type: dark
+  run: HSC/calib/gen2/2013-11-03
+  records:
+  - dataset_id:
+    - 1034
+    data_id:
+    - instrument: HSC
+      detector: 10
+    path: HSC/calib/gen2/2013-11-03/dark/dark_10_HSC_HSC_calib_gen2_2013-11-03.fits
+    formatter: lsst.obs.base.formatters.fitsExposure.FitsExposureFormatter
+- type: dataset_type
+  name: defects
+  dimensions:
+  - instrument
+  - detector
+  storage_class: Defects
+  is_calibration: true
+- type: dataset
+  dataset_type: defects
+  run: HSC/calib/curated/2013-01-31T00:00:00
+  records:
+  - dataset_id:
+    - 142
+    data_id:
+    - instrument: HSC
+      detector: 10
+    path: HSC/calib/curated/2013-01-31T00:00:00/defects/defects_10_HSC_HSC_calib_curated_2013-01-31T00:00:00.fits
+    formatter: lsst.obs.base.formatters.fitsGeneric.FitsGenericFormatter
+- type: dataset_type
+  name: flat
+  dimensions:
+  - band
+  - instrument
+  - detector
+  - physical_filter
+  storage_class: ExposureF
+  is_calibration: true
+- type: dataset
+  dataset_type: flat
+  run: HSC/calib/gen2/2013-06-17
+  records:
+  - dataset_id:
+    - 1050
+    data_id:
+    - instrument: HSC
+      detector: 10
+      physical_filter: HSC-R
+    path: HSC/calib/gen2/2013-06-17/flat/r/HSC-R/flat_r_HSC-R_10_HSC_HSC_calib_gen2_2013-06-17.fits
+    formatter: lsst.obs.base.formatters.fitsExposure.FitsExposureFormatter
+- type: dataset_type
+  name: ps1_pv3_3pi_20170110
+  dimensions:
+  - htm7
+  storage_class: SimpleCatalog
+  is_calibration: false
+- type: dataset
+  dataset_type: ps1_pv3_3pi_20170110
+  run: refcats
+  records:
+  - dataset_id:
+    - 1143
+    data_id:
+    - htm7: 189584
+    path: refcats/ps1_pv3_3pi_20170110/ps1_pv3_3pi_20170110_189584_refcats.fits
+    formatter: lsst.obs.base.formatters.fitsGeneric.FitsGenericFormatter
+  - dataset_id:
+    - 1144
+    data_id:
+    - htm7: 189648
+    path: refcats/ps1_pv3_3pi_20170110/ps1_pv3_3pi_20170110_189648_refcats.fits
+    formatter: lsst.obs.base.formatters.fitsGeneric.FitsGenericFormatter
+- type: dataset_type
+  name: gaia_dr2_20200414
+  dimensions:
+  - htm7
+  storage_class: SimpleCatalog
+  is_calibration: false
+- type: dataset
+  dataset_type: gaia_dr2_20200414
+  run: refcats
+  records:
+  - dataset_id:
+    - 1145
+    data_id:
+    - htm7: 189584
+    path: refcats/gaia_dr2_20200414/189584.fits
+    formatter: lsst.obs.base.formatters.fitsGeneric.FitsGenericFormatter
+  - dataset_id:
+    - 1146
+    data_id:
+    - htm7: 189648
+    path: refcats/gaia_dr2_20200414/189648.fits
+    formatter: lsst.obs.base.formatters.fitsGeneric.FitsGenericFormatter
+- type: dataset_type
+  name: transmission_atmosphere
+  dimensions:
+  - instrument
+  storage_class: TransmissionCurve
+  is_calibration: true
+- type: dataset
+  dataset_type: transmission_atmosphere
+  run: HSC/calib/unbounded
+  records:
+  - dataset_id:
+    - 976
+    data_id:
+    - instrument: HSC
+    path: HSC/calib/unbounded/transmission_atmosphere/transmission_atmosphere_HSC_HSC_calib_unbounded.fits
+    formatter: lsst.obs.base.formatters.fitsGeneric.FitsGenericFormatter
+- type: dataset_type
+  name: transmission_filter
+  dimensions:
+  - band
+  - instrument
+  - physical_filter
+  storage_class: TransmissionCurve
+  is_calibration: true
+- type: dataset
+  dataset_type: transmission_filter
+  run: HSC/calib/unbounded
+  records:
+  - dataset_id:
+    - 957
+    data_id:
+    - instrument: HSC
+      physical_filter: HSC-R
+    path: HSC/calib/unbounded/transmission_filter/r/HSC-R/transmission_filter_r_HSC-R_HSC_HSC_calib_unbounded.fits
+    formatter: lsst.obs.base.formatters.fitsGeneric.FitsGenericFormatter
+- type: dataset_type
+  name: transmission_optics
+  dimensions:
+  - instrument
+  storage_class: TransmissionCurve
+  is_calibration: true
+- type: dataset
+  dataset_type: transmission_optics
+  run: HSC/calib/unbounded
+  records:
+  - dataset_id:
+    - 843
+    data_id:
+    - instrument: HSC
+    path: HSC/calib/unbounded/transmission_optics/transmission_optics_HSC_HSC_calib_unbounded.fits
+    formatter: lsst.obs.base.formatters.fitsGeneric.FitsGenericFormatter
+- type: dataset_type
+  name: transmission_sensor
+  dimensions:
+  - instrument
+  - detector
+  storage_class: TransmissionCurve
+  is_calibration: true
+- type: dataset
+  dataset_type: transmission_sensor
+  run: HSC/calib/unbounded
+  records:
+  - dataset_id:
+    - 854
+    data_id:
+    - instrument: HSC
+      detector: 10
+    path: HSC/calib/unbounded/transmission_sensor/transmission_sensor_10_HSC_HSC_calib_unbounded.fits
+    formatter: lsst.obs.base.formatters.fitsGeneric.FitsGenericFormatter
+- type: associations
+  collection: HSC/calib
+  collection_type: CALIBRATION
+  validity_ranges:
+  - begin: !butler_time/tai/iso '2013-01-31 00:00:35.000000000'
+    end: !butler_time/tai/iso '2014-04-03 00:00:35.000000000'
+    dataset_ids:
+    - 142
+  - begin: !butler_time/tai/iso '2012-12-19 00:00:00.000000000'
+    end: !butler_time/tai/iso '2013-12-14 00:00:00.000000000'
+    dataset_ids:
+    - 1050
+  - begin: !butler_time/tai/iso '2013-05-07 00:00:00.000000000'
+    end: !butler_time/tai/iso '2014-05-02 00:00:00.000000000'
+    dataset_ids:
+    - 1016
+    - 1034
+  - begin: null
+    end: null
+    dataset_ids:
+    - 842
+    - 1
+    - 976
+    - 957
+    - 843
+    - 854

@@ -1,0 +1,6 @@
+description: "Run a custom QA PipelineTask against LSST/Rubin calexp outputs."
+tasks:
+  exposureStats:
+    class: your_survey.tasks.exposure_stats.ExposureStatsTask
+    config:
+      thresholdSigma: 5.0
